@@ -1,0 +1,114 @@
+/** selector universal */
+*{
+    margin: 0;
+    padding: 0;
+    /** indicamos a las cajitas que se adapten al contenedor padre */
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f3e5d8;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    background-color: #fff;
+    /* margin: 0 2rem; */
+    max-width: 90%;
+    /** top y bottom 2 rem */
+    margin: 2rem 0;
+    /** 1rem = 16px */
+    padding: 2.5rem;
+    border-radius: 30px;
+}
+
+.img_receta{
+    max-width: 100%;
+}
+
+.titulo{
+    margin: 1.5rem 0;
+    font-size: 2.5rem;
+}
+
+.contenedor_receta{
+    background-color: #efe4d9;
+    padding: 2rem;
+}
+
+.contenedor_receta h3{
+    color: #712e49;
+}
+
+.contenedor_receta ul li{
+    margin: 6px 10px;
+}
+
+.contendor_ingredientes, .contenedor_instrucciones, .contenedor_nutricion{
+    margin-top: 1rem;
+    padding: 1.5rem;
+}
+
+h2{
+    color: #784738;
+    font-size: 2rem;
+}
+
+/** utilizando una pseudoclase */
+h2:hover{
+    color: blueviolet;
+}
+
+.contendor_ingredientes li, .contenedor_instrucciones li{
+    margin: 6px 10px;
+}
+
+/** utilizamos un pseudoelemento */
+ol li::marker{
+    color: #784738;
+    font-weight: bold;
+}
+
+.contenedor_nutricion p{
+    margin: 1rem 0;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td{
+    border-bottom: 1px solid #00000046;
+    padding: 10px 0;
+}
+
+.td_nombre{
+    font-size: 1.3rem;
+}
+
+.td_cantidad{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #712e49;
+}
+
+/* @media (max-width: 576px){
+    main{
+        background-color: cadetblue;
+    }
+
+    .contenedor_receta{
+        background-color: bisque;
+    }
+} */
+
+/** media query para pantallas grandes */
+@media (min-width: 720px){
+    main{
+        max-width: 50%;
+    }
+}
+
