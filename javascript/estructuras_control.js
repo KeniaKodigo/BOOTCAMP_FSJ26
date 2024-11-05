@@ -64,6 +64,7 @@ function escogerPago($forma_pago){
 
 escogerPago("Paypall");
 
+//creando un <div>
 
 // votar(15)
 // votar(30)
