@@ -57,7 +57,6 @@ function lugarTuristico(){
 
     alert(`Seleccionaste este lugar: ${lugar.value}`)
     console.log(lugar.value);
-    
 }
 
 
