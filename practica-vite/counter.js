@@ -8,6 +8,8 @@ export function setupCounter(element) {
   setCounter(0)
 }
 
+/** export vs export default */
+
 export const PI = 3.1416
 
 function saludar(){
