@@ -6,13 +6,24 @@ let arreglo = [
         id: 5
     },
 
+    // {
+    //     titulo: "Comida Italiana",
+    //     img: "test2",
+    //     precio: 67,
+    //     id: 6
+    // },
+
     {
-        titulo: "Comida Italiana",
+        titulo: "Test",
         img: "test2",
         precio: 67,
-        id: 6
+        id: 10
     }
 ]
+
+//filtrando los cursos
+arreglo = arreglo.filter(curso => curso.id != 6)
+
 
 arreglo.forEach(item => {
     item.titulo //titulo1, titulo2

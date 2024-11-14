@@ -83,12 +83,65 @@ function carritoHTML(){
             <td>${curso.titulo}</td>
             <td>${curso.precio}</td>
             <td>
-                <button>X</button>
+                <button class="borrar_curso" data-id=${curso.id}>X</button>
             </td>
         `
         //agregando la fila al tbody
         body.appendChild(fila)
     })
+}
+
+//funcion para eliminar un curso por su id
+export function eliminarCurso(e){
+    //validando que seleccione la etiqueta del boton para eliminar un curso
+    if(e.target.classList.contains('borrar_curso')){
+        // console.log(e.target);
+        
+        console.log('este es el boton de eliminar');
+        
+        //obteniendo el id del curso que quiere eliminar la persona
+        const idCurso = e.target.getAttribute('data-id');
+        console.log('Curso que quiere eliminar la persona: ', idCurso);
+
+        //obteniendo el boton para habilitarlo cuando la persona elimine el curso
+        const habilitarBoton = document.querySelector(`.button-carrito[data-id="${idCurso}"]`);
+        console.log("Boton que vamos habilitar:",habilitarBoton);
+        
+    
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //filtramos los cursos que sean diferentes al id que selecciono la persona
+                arreglo_cursos = arreglo_cursos.filter(curso => curso.id != idCurso)
+
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+
+                console.log(arreglo_cursos);
+
+                //remover una clase a una etiqueta html
+                if(habilitarBoton){
+                    habilitarBoton.classList.remove('disabled')
+
+                    habilitarBoton.textContent = "Agregar al carrito"
+                }
+                
+
+                //llamando la funcion para que actualize el arreglo en la tabla
+                carritoHTML()
+            }
+        });
+    }
 }
 
 
