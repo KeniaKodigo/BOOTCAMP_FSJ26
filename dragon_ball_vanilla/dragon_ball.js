@@ -5,7 +5,9 @@ export async function getDragonBall(){
      * funcion asincronica: son funciones que ejecutamos en segundo plano
      * fetch: metodo nativo que nos ayuda a consumir url externas
      * axios: es una libreria que nos ayuda a consumir una api, tiene varios metodos HTTP
-     * 
+     * axios.post()
+     * axios.put()
+     * axios.delete()
      */
 
     //validando si la promesa se cumple o no
@@ -21,8 +23,9 @@ export async function getDragonBall(){
         const arreglo_personajes = data.items; //[]
         console.log(arreglo_personajes);
 
+
         //LLAMANDO EL DIV QUE TENDRA LA INFO DE DRAGON BALL
-        const divDragonBall = document.querySelector('.contenedor_personajes');
+        const divDragonBall = document.querySelector('.contenedor_personajes'); //<div>
 
         //Iterando el arreglo
         for(const personaje of arreglo_personajes){
@@ -31,6 +34,16 @@ export async function getDragonBall(){
             console.log("Raza:" + personaje.race);
             
             /** dentro del div tiene que aparecer el nombre, imagen, raza y ki de cada personaje */
+            //crear un elemento html (<article/>)
+            const article = document.createElement('article'); //<article></article>
+
+            article.innerHTML = `
+                <h4>${personaje.name}</h4>
+                <img src=${personaje.image} />
+                <p>Raza: ${personaje.race}</p>
+            `;
+            //agregando un hijo al div
+            divDragonBall.appendChild(article)
         }
     }catch(error){
         console.error("Error al consumir los personajes de dragon ball", error);
