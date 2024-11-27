@@ -27,7 +27,13 @@ function sintaxis(){
         carnet: "A12345"
     };
 
+    //estructuras de control
+
     //POO
 
 
 }
+
+sintaxis()
+
+sintaxis()

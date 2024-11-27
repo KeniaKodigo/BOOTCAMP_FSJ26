@@ -2,6 +2,24 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
+import { Coach } from './clase.ts'
+
+
+//instanciando la clase coach
+let coach_oscar = new Coach("Oscar Lemus","oscar@kodigo.org",6785432,"Scrum Master");
+console.log(coach_oscar); 
+// coach_oscar.nombre = "Oscar Lemus"; 
+// console.log(coach_oscar); 
+
+let coach_kenia = new Coach("Kenia Paiz","kenia@kodigo.org",654278,"Desarrollo Web");
+
+coach_kenia.nombre = "Kenia Paiz";
+console.log(coach_kenia);
+// coach_kenia.correo = "kenia@gmail.com";
+// coach_kenia.especialidad 
+console.log(coach_kenia.saludar()); //Hola soy un coach y me llamo Kenia Paiz"
+
+// let coach_karla = new Coach(); 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
