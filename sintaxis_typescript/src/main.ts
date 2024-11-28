@@ -3,6 +3,25 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 import { Coach } from './clase.ts'
+import { Persona, Estudiante } from './persona.ts'
+
+/*********** Clase Persona */
+let angelica = new Persona("Angelica Rodriguez",765478,"Panama");
+console.log(angelica.verInfo());
+angelica.setDireccion("El Salvador");
+console.log("Actualizando Data-------------");
+console.log(angelica.verInfo());
+
+/********* Clase Estudiante */
+let guillermo = new Estudiante("Guillermo",678904,"San salvador","GL2024","FSJ26","guillermo@gmail.com");
+console.log(guillermo.verInfo());
+console.log("Direccion de guillermo: " + guillermo.getDireccion());
+console.log(guillermo);
+
+
+
+
+
 
 
 //instanciando la clase coach

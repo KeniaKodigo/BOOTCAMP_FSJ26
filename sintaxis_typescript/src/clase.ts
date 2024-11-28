@@ -33,7 +33,6 @@ export class Coach{
         this.especialidad = especialidad;
     }
 
-
     saludar(){
         return "Hola soy un coach y me llamo" + this.nombre;
     }
@@ -66,7 +65,8 @@ class CoachHora extends Coach{
     }
 }
 
-
+//construtor por defecto
+//contructor con parametros
 
 
 
