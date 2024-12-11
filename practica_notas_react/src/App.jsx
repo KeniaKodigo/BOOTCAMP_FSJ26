@@ -4,23 +4,35 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Principal from './Principal'
 import Encabezado from './Encabezado'
+import RegisterNote from './components/RegisterNote'
 
 function App() {
-  const [count, setCount] = useState(0)
+  //declarando un estado
+  //estados globales
+  /**
+   * count = 0 (lo que se guarda el estado), ahora vale 10
+   * setCount = es el elemento que nos permite actualizar el estado
+   */
+
+  //estado para manejar la lista de las notas
+  const [listNotes, setListNotes] = useState([])
 
   const sumar = () => {
     let suma = 2 + 34;
     return "La suma es: " + suma;
   }
-
   let data = ["hola"]
 
   return (
     <>
       {/** pasando props */}
       <Encabezado fullname="Geraldhy Messu" saludo="Hola desde una props" sumar={sumar()}/>
-      <Encabezado fullname="Guillermo" saludo="Hola desde una props" sumar={sumar()} />
+      {/* <Encabezado fullname="Guillermo" saludo="Hola desde una props" sumar={sumar()} /> */}
       <Principal />
+      <div>
+        {/** pasando como props el estado de la lista de notas */}
+        <RegisterNote listNotes={listNotes} setListNotes={setListNotes}/>
+      </div>
     </>
   )
 }
