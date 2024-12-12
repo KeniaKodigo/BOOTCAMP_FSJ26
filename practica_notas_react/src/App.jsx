@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import Principal from './Principal'
 import Encabezado from './Encabezado'
 import RegisterNote from './components/RegisterNote'
+import ListNotes from './components/ListNotes'
 
 function App() {
   //declarando un estado
@@ -22,7 +22,7 @@ function App() {
     return "La suma es: " + suma;
   }
   let data = ["hola"]
-
+  console.log(listNotes);
   return (
     <>
       {/** pasando props */}
@@ -32,6 +32,9 @@ function App() {
       <div>
         {/** pasando como props el estado de la lista de notas */}
         <RegisterNote listNotes={listNotes} setListNotes={setListNotes}/>
+      </div>
+      <div>
+        <ListNotes listNotes={listNotes} setListNotes={setListNotes}/>
       </div>
     </>
   )

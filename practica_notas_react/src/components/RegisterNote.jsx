@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4} from 'uuid'
 
+
 //recibiendo props
 export default function RegisterNote({listNotes, setListNotes}) {
     //declarando 2 estados para las entradas de datos
@@ -23,6 +24,7 @@ export default function RegisterNote({listNotes, setListNotes}) {
 
     //funcion para guardar las notas
     const saveNote = (e) => {
+        //cancelamos la accion del submit
         e.preventDefault()
         //guardando la nota en el estado de lista de notas
         //spread operator (...)
@@ -35,7 +37,7 @@ export default function RegisterNote({listNotes, setListNotes}) {
     }
 
     // console.log(`Estado del titulo: ${title}`);
-    console.log(listNotes)
+    // console.log(listNotes)
 
     return (
         <div>
@@ -58,3 +60,4 @@ export default function RegisterNote({listNotes, setListNotes}) {
         </div>
     )
 }
+
