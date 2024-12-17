@@ -1,4 +1,5 @@
 import React from 'react'
+import style from '../assets/css/Note.module.css'
 
 export default function ListNotes({listNotes, setListNotes}) {
     console.log(`Estado compartido para el componente LisNotes:`);
@@ -12,8 +13,8 @@ export default function ListNotes({listNotes, setListNotes}) {
         setListNotes(listNotes.filter((note) => note.id !== id))
     }
     
-    
     return (
+        
         <div>
             <h2>Lista de Notas</h2>
 
@@ -32,10 +33,10 @@ export default function ListNotes({listNotes, setListNotes}) {
                         return (
                             <>
                                 {/** la key representa los elementos unicos del arreglo, es decir el id de cada nota */}
-                                <div key={note.id}>
-                                    <button onClick={() => deleteNoteById(note.id)}>X</button>
-                                    <h3>{note.titleNote}</h3>
-                                    <p>{note.descriptionNote}</p>
+                                <div key={note.id} className={style.card}>
+                                    <button className={style.btn} onClick={() => deleteNoteById(note.id)}>X</button>
+                                    <h3 className={style.title_note}>{note.titleNote}</h3>
+                                    <p className={style.description}>{note.descriptionNote}</p>
                                 </div>
                             </>
                         )

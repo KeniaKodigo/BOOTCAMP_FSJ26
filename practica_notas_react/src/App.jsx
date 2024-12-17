@@ -5,6 +5,8 @@ import Principal from './Principal'
 import Encabezado from './Encabezado'
 import RegisterNote from './components/RegisterNote'
 import ListNotes from './components/ListNotes'
+import style from './assets/css/App.module.css'
+import RegisterHook from './components/RegisterHook'
 
 function App() {
   //declarando un estado
@@ -29,13 +31,16 @@ function App() {
       <Encabezado fullname="Geraldhy Messu" saludo="Hola desde una props" sumar={sumar()}/>
       {/* <Encabezado fullname="Guillermo" saludo="Hola desde una props" sumar={sumar()} /> */}
       <Principal />
-      <div>
-        {/** pasando como props el estado de la lista de notas */}
-        <RegisterNote listNotes={listNotes} setListNotes={setListNotes}/>
-      </div>
-      <div>
-        <ListNotes listNotes={listNotes} setListNotes={setListNotes}/>
-      </div>
+      <section className={style.container}>
+        <div>
+          {/** pasando como props el estado de la lista de notas */}
+          {/* <RegisterNote listNotes={listNotes} setListNotes={setListNotes}/> */}
+          <RegisterHook listNotes={listNotes} setListNotes={setListNotes}/>
+        </div>
+        <div>
+          <ListNotes listNotes={listNotes} setListNotes={setListNotes}/>
+        </div>
+      </section>
     </>
   )
 }

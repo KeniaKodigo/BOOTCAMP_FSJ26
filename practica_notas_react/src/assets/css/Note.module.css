@@ -1,0 +1,26 @@
+.card{
+    background-color: #07575B;
+    border: 1px solid #07575B;
+    padding: 1rem;
+    margin: 10px;
+}
+
+.btn{
+    background-color: #66A5AD;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.title_note{
+    color: #fff;
+    font-weight: 300;
+}
+
+.description{
+    color: #fff;
+    font-weight: 200;
+    margin-top: 5px;
+}

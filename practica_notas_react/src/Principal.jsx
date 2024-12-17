@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Principal.module.css'
+import style from './assets/css/Principal.module.css'
 
 export default function Principal() {
     const PI = 3.1416

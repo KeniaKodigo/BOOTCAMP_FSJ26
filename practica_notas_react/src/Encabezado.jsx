@@ -1,5 +1,6 @@
 import React from 'react'
-import style from './Encabezado.module.css'
+import style from './assets/css/Encabezado.module.css'
+import './assets/prueba.css'
 
 //recibiendo propiedades de otro componente
 export default function Encabezado({fullname, saludo, sumar}) {
@@ -8,7 +9,7 @@ export default function Encabezado({fullname, saludo, sumar}) {
         <h1 className={style.titulo}>Bienvenido {fullname}</h1>
         <p>{saludo}</p>
 
-        <h3>{sumar}</h3>
+        <h3 id='subtitulo'>{sumar}</h3>
     </div>
   )
 }

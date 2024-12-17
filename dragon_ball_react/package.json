@@ -1,5 +1,5 @@
 {
-  "name": "practica_notas_react",
+  "name": "dragon_ball_react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-hook-form": "^7.54.1",
-    "uuid": "^11.0.3"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

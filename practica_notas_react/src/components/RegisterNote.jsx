@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4} from 'uuid'
+import styles from '../assets/css/Form.module.css'
 
 
 //recibiendo props
@@ -45,19 +46,21 @@ export default function RegisterNote({listNotes, setListNotes}) {
 
             <form action="" onSubmit={saveNote}>
                 <div>
-                    <label htmlFor="">Titulo</label>
-                    <input type="text" onChange={(e) => handleTitle(e)}/>
+                    <label htmlFor="">Titulo</label><br />
+                    <input type="text" className={styles.input} onChange={(e) => handleTitle(e)}/>
                 </div>
 
                 <div>
-                    <label htmlFor="">Descripcion</label>
-                    <textarea onChange={(e) => handleDescription(e)}></textarea>
+                    <label htmlFor="">Descripcion</label><br />
+                    <textarea onChange={(e) => handleDescription(e)} cols={41} rows={5}></textarea>
                 </div>
                 <div>
-                    <input type="submit" value="Guardar Nota"/>
+                    <input type="submit" className={styles.btn} value="Guardar Nota"/>
                 </div>
             </form>
         </div>
     )
 }
+
+//dentro del componente
 

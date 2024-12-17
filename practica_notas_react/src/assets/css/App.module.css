@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    margin: 1rem 3.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
