@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Characters from './components/Characters'
+import Favorites from './components/Favorites'
 
 function App() {
   //estado para manejar los favoritos
-  const [favorites, setFavorites] = useState([])
+  //almancenamos los favoritos en el local storage (get, set)
+  const storageFavorite = localStorage.getItem('DragonBallFavorites') ? JSON.parse(localStorage.getItem('DragonBallFavorites')) : [];
+
+  const [favorites, setFavorites] = useState(storageFavorite)
+
+  //montar el almacenamiento en el localstorage
+  useEffect(() => {
+    localStorage.setItem('DragonBallFavorites',JSON.stringify(favorites))
+  }, [favorites])
 
   return (
     <>
@@ -14,6 +23,8 @@ function App() {
       <section>
         <div>
           <Characters favorites={favorites} setFavorites={setFavorites}/>
+
+          <Favorites fav={favorites}/>
         </div>
       </section>
     </>

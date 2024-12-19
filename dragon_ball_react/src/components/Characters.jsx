@@ -24,11 +24,19 @@ export default function Characters({favorites, setFavorites}) {
         }
     }
 
-    //metodo para agregar favoritos
-    const toggleFavorite = (character) => {
+    //metodo para agregar o quitar favoritos
+    const toggleFavorite = (character) => { //mandame un personaje
         console.log(character);
-        //actualizando y agredando un favorito al estado
-        setFavorites([...favorites, character]);
+        //verificando si el personaje existe o no
+        if(favorites.some((element) => element.id == character.id)){
+            console.log('Ya existe');
+            //si existe el personaje, lo quitamos de favoritos
+            setFavorites(favorites.filter((element) => element.id != character.id))
+        }else{
+            //si no existe, agregamos el personaje a favoritos
+            setFavorites([...favorites, character]);
+        }
+        
     }
 
     //haciendo un efecto secundario para montar los personajes de la API
@@ -51,6 +59,10 @@ export default function Characters({favorites, setFavorites}) {
                     //item => representa los elementos del arreglo
                     //index => posicion de cada elemento
                     characters.map((item, index) => {
+                        //esta variable guarda si un elemento esta en favoritos o no
+                        const isFavorite = favorites.some((element) => element.id == item.id)
+
+
                         return(
                             <div key={index}>
                                 <img src={item.image} alt={item.name} style={{width: "30%"}}/>
@@ -58,7 +70,7 @@ export default function Characters({favorites, setFavorites}) {
                                 <p>{item.ki <= 0 ? 'este personaje no tiene Ki' : `Ki: ${item.ki}`} </p>
                                 <p><strong>Raza: </strong>{item.race}</p>
                                 {/** pasamos item (porque item representa cada personaje del arreglo) */}
-                                <button onClick={() => toggleFavorite(item)}><FaHeart /></button>
+                                <button onClick={() => toggleFavorite(item)}><FaHeart className={isFavorite ? style.active : style.inactive} /></button>
                             </div>
                         )
                     })
