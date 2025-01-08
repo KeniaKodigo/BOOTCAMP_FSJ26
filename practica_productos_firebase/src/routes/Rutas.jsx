@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router'
 import Bienvenida from '../components/Bienvenida'
 import RegistrarProducto from '../components/RegistrarProducto'
 import Prueba from '../components/Prueba'
+import Productos from '../components/Productos'
 
 export default function Rutas() {
     return (
@@ -15,6 +16,9 @@ export default function Rutas() {
                         </li>
                         <li>
                             <Link to='/registro'>Registrar Producto</Link>
+                        </li>
+                        <li>
+                            <Link to='/lista'>Productos</Link>
                         </li>
                     </ul>
                 </nav>
@@ -30,6 +34,7 @@ export default function Rutas() {
             <Route path='/' element={<Bienvenida />} />
             <Route path='/registro' element={<RegistrarProducto />} />
             <Route path='/random' element={<Prueba />}/>
+            <Route path='/lista' element={<Productos />}/>
         </Routes>
 
         </BrowserRouter>
