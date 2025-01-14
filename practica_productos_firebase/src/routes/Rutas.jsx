@@ -4,6 +4,7 @@ import Bienvenida from '../components/Bienvenida'
 import RegistrarProducto from '../components/RegistrarProducto'
 import Prueba from '../components/Prueba'
 import Productos from '../components/Productos'
+import EditarProducto from '../components/EditarProducto'
 
 export default function Rutas() {
     return (
@@ -35,6 +36,8 @@ export default function Rutas() {
             <Route path='/registro' element={<RegistrarProducto />} />
             <Route path='/random' element={<Prueba />}/>
             <Route path='/lista' element={<Productos />}/>
+            {/** rutas parametro */}
+            <Route path='/editar/:id_producto' element={<EditarProducto />}/>
         </Routes>
 
         </BrowserRouter>
